@@ -1,0 +1,27 @@
+[02-Sep-2025 20:22:17 Europe/Berlin] Recibida solicitud POST en agregar_pago_modal.php
+[02-Sep-2025 20:22:17 Europe/Berlin] Datos recibidos: miembro_id=1, idmembresia=11, fecha_pago=2025-09-02, monto_pagado=50
+[02-Sep-2025 20:22:17 Europe/Berlin] Pago insertado. Filas afectadas: 1
+[09-Sep-2025 18:51:03 Europe/Berlin] Recibida solicitud POST en agregar_pago.php
+[09-Sep-2025 18:51:03 Europe/Berlin] Datos recibidos: miembro_id=6, idmembresia=11, fecha_pago=2025-09-09, monto_pagado=50
+[09-Sep-2025 18:51:03 Europe/Berlin] Pago insertado. Filas afectadas: 1
+[09-Sep-2025 18:51:54 Europe/Berlin] Recibida solicitud POST en agregar_pago.php
+[09-Sep-2025 18:51:54 Europe/Berlin] Datos recibidos: miembro_id=1, idmembresia=11, fecha_pago=2025-09-04, monto_pagado=50
+[09-Sep-2025 18:51:54 Europe/Berlin] Pago insertado. Filas afectadas: 1
+[09-Sep-2025 19:01:35 Europe/Berlin] PHP Warning:  Undefined variable $miembro_id in C:\xampp\htdocs\gym_php\gimnasio\agregarPago.php on line 11
+[09-Sep-2025 19:01:35 Europe/Berlin] PHP Warning:  Undefined variable $membresias in C:\xampp\htdocs\gym_php\gimnasio\agregarPago.php on line 17
+[09-Sep-2025 19:01:35 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\gym_php\gimnasio\agregarPago.php on line 17
+[09-Sep-2025 19:01:35 Europe/Berlin] PHP Warning:  Undefined variable $precio_membresia_actual in C:\xampp\htdocs\gym_php\gimnasio\agregarPago.php on line 36
+[09-Sep-2025 19:33:26 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:33:33 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:33:33 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:33:40 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:33:40 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:37:08 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:37:16 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:37:16 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:37:22 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:37:22 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:37:26 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:37:30 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:37:34 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:38:42 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
