@@ -11,58 +11,35 @@ if (!isset($_SESSION['user_id']) || $_SESSION['tipo_usuario'] != 1) {
 // Obtener el ID del gimnasio de la sesión
 $gimnasio_id = $_SESSION['gimnasio_id'];
 
-// Obtener todos los miembros del gimnasio
+// --- Buscar por nombre ---
+$where = "WHERE m.idgimnasio = ? AND m.deleted = 0";
+$params = [$gimnasio_id];
+
+if (isset($_GET['nombre']) && !empty($_GET['nombre'])) {
+    $nombre = "%" . $_GET['nombre'] . "%";
+    $where .= " AND m.miembro LIKE ?";
+    $params[] = $nombre;
+}
+
+// Obtener todos los miembros (con filtro si aplica)
 $stmt = $pdo->prepare("
     SELECT m.*, b.barrio, l.localidad, mem.membresia 
     FROM miembros m
     JOIN barrios b ON m.idbarrio = b.idbarrio
     JOIN localidades l ON m.idlocalidad = l.idlocalidad
     JOIN membresias mem ON m.idmembresia = mem.idmembresia
-    WHERE m.idgimnasio = ? AND m.deleted = 0
+    $where
     ORDER BY m.miembro
 ");
-$stmt->execute([$gimnasio_id]);
+$stmt->execute($params);
 $miembros = $stmt->fetchAll();
-
-// Filtrar por membresía si se proporciona
-$filtro_membresia = '';
-if (isset($_GET['membresia']) && !empty($_GET['membresia'])) {
-    $filtro_membresia = intval($_GET['membresia']);
-    
-    // Verificar que la membresía pertenezca al gimnasio
-    $stmt = $pdo->prepare("SELECT COUNT(*) FROM membresias WHERE idmembresia = ? AND idgimnasio = ? AND deleted = 0");
-    $stmt->execute([$filtro_membresia, $gimnasio_id]);
-    if ($stmt->fetchColumn() > 0) {
-        // Filtrar miembros por membresía
-        $stmt = $pdo->prepare("
-            SELECT m.*, b.barrio, l.localidad, mem.membresia 
-            FROM miembros m
-            JOIN barrios b ON m.idbarrio = b.idbarrio
-            JOIN localidades l ON m.idlocalidad = l.idlocalidad
-            JOIN membresias mem ON m.idmembresia = mem.idmembresia
-            WHERE m.idgimnasio = ? AND m.idmembresia = ? AND m.deleted = 0
-            ORDER BY m.miembro
-        ");
-        $stmt->execute([$gimnasio_id, $filtro_membresia]);
-        $miembros = $stmt->fetchAll();
-        
-        // Obtener nombre de la membresía
-        $stmt = $pdo->prepare("SELECT membresia FROM membresias WHERE idmembresia = ?");
-        $stmt->execute([$filtro_membresia]);
-        $nombre_membresia = $stmt->fetchColumn();
-    }
-}
-
-// Obtener todas las membresías del gimnasio para el filtro
-$stmt = $pdo->prepare("SELECT * FROM membresias WHERE idgimnasio = ? AND deleted = 0 ORDER BY membresia");
-$stmt->execute([$gimnasio_id]);
-$membresias = $stmt->fetchAll();
 
 // Obtener datos del gimnasio
 $stmt = $pdo->prepare("SELECT gimnasio FROM gimnasio WHERE idgimnasio = ?");
 $stmt->execute([$gimnasio_id]);
 $nombre_gimnasio = $stmt->fetchColumn();
 ?>
+
 
 <?php $pageTitle = "Miembros - Sistema de Gestión de Gimnasio"; include_once("includes/header.php"); ?>
 <?php $gimnasio = ["gimnasio" => $nombre_gimnasio]; include_once("includes/navbar.php"); ?>
@@ -102,19 +79,12 @@ $nombre_gimnasio = $stmt->fetchColumn();
                         <div class="card-header bg-light">
                             <div class="row align-items-center">
                                 <div class="col-md-6">
-                                    <h5 class="mb-0">Filtrar por Membresía</h5>
+                                    <h5 class="mb-0">Buscar Miembro</h5>
                                 </div>
                                 <div class="col-md-6">
                                     <form method="GET" action="miembros.php" class="d-flex">
-                                        <select class="form-select me-2" name="membresia">
-                                            <option value="">Todas las membresías</option>
-                                            <?php foreach ($membresias as $membresia): ?>
-                                                <option value="<?php echo $membresia['idmembresia']; ?>" <?php echo (isset($filtro_membresia) && $filtro_membresia == $membresia['idmembresia']) ? 'selected' : ''; ?>>
-                                                    <?php echo htmlspecialchars($membresia['membresia']); ?>
-                                                </option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                        <button type="submit" class="btn btn-primary">Filtrar</button>
+                                        <input type="text" class="form-control me-2" name="nombre" placeholder="Ingrese nombre..." value="<?php echo isset($_GET['nombre']) ? htmlspecialchars($_GET['nombre']) : ''; ?>">
+                                        <button type="submit" class="btn btn-primary">Buscar</button>
                                     </form>
                                 </div>
                             </div>
@@ -126,6 +96,7 @@ $nombre_gimnasio = $stmt->fetchColumn();
                             <table class="table table-striped table-hover">
                                 <thead class="table-dark">
                                     <tr>
+                                        <th>Foto</th>
                                         <th>Nombre</th>
                                         <th>DNI</th>
                                         <th>Teléfono</th>
@@ -137,6 +108,17 @@ $nombre_gimnasio = $stmt->fetchColumn();
                                 <tbody>
                                     <?php foreach ($miembros as $miembro): ?>
                                         <tr>
+                                            <td>
+                                                <?php if (!empty($miembro['foto'])): ?>
+                                                    <img src="../<?php echo htmlspecialchars($miembro['foto']); ?>" 
+                                                        alt="Foto" 
+                                                        width="50" height="50" 
+                                                        class="rounded-circle shadow-sm" 
+                                                        style="object-fit: cover;">
+                                                <?php else: ?>
+                                                    <i class="fas fa-user-circle fa-2x text-secondary"></i>
+                                                <?php endif; ?>
+                                            </td>
                                             <td><?php echo htmlspecialchars($miembro['miembro']); ?></td>
                                             <td><?php echo htmlspecialchars($miembro['dni']); ?></td>
                                             <td><?php echo htmlspecialchars($miembro['telefono']); ?></td>

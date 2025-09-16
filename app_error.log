@@ -25,3 +25,47 @@
 [09-Sep-2025 19:37:30 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
 [09-Sep-2025 19:37:34 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
 [09-Sep-2025 19:38:42 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:48:06 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 19:48:11 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[09-Sep-2025 20:32:54 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\logout.php on line 6
+[16-Sep-2025 18:33:49 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\logout.php on line 6
+[16-Sep-2025 18:39:50 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[16-Sep-2025 19:25:32 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[16-Sep-2025 19:25:40 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[16-Sep-2025 19:25:40 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[16-Sep-2025 19:25:47 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[16-Sep-2025 19:25:47 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[16-Sep-2025 19:25:52 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[16-Sep-2025 19:27:32 Europe/Berlin] Recibida solicitud POST en agregar_pago.php
+[16-Sep-2025 19:27:32 Europe/Berlin] Datos recibidos: miembro_id=19, idmembresia=13, fecha_pago=2025-09-12, monto_pagado=1321
+[16-Sep-2025 19:27:32 Europe/Berlin] Pago insertado. Filas afectadas: 1
+[16-Sep-2025 19:34:41 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[16-Sep-2025 19:34:41 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idgimnasio' in 'where clause' in C:\xampp\htdocs\gym_php\gimnasio\otros.php:62
+Stack trace:
+#0 C:\xampp\htdocs\gym_php\gimnasio\otros.php(62): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 62
+[16-Sep-2025 19:34:44 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[16-Sep-2025 19:34:45 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idgimnasio' in 'where clause' in C:\xampp\htdocs\gym_php\gimnasio\otros.php:62
+Stack trace:
+#0 C:\xampp\htdocs\gym_php\gimnasio\otros.php(62): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 62
+[16-Sep-2025 19:34:46 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[16-Sep-2025 19:34:46 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idgimnasio' in 'where clause' in C:\xampp\htdocs\gym_php\gimnasio\otros.php:62
+Stack trace:
+#0 C:\xampp\htdocs\gym_php\gimnasio\otros.php(62): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 62
+[16-Sep-2025 19:35:08 Europe/Berlin] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 3
+[16-Sep-2025 19:35:08 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'idgimnasio' in 'where clause' in C:\xampp\htdocs\gym_php\gimnasio\otros.php:62
+Stack trace:
+#0 C:\xampp\htdocs\gym_php\gimnasio\otros.php(62): PDOStatement->execute(Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\gym_php\gimnasio\otros.php on line 62
+[16-Sep-2025 19:37:43 Europe/Berlin] Recibida solicitud POST en agregar_pago.php
+[16-Sep-2025 19:37:43 Europe/Berlin] Datos recibidos: miembro_id=9, idmembresia=6, fecha_pago=2025-09-16, monto_pagado=341
+[16-Sep-2025 19:37:43 Europe/Berlin] Pago insertado. Filas afectadas: 1
+[16-Sep-2025 20:40:58 Europe/Berlin] Recibida solicitud POST en agregar_pago.php
+[16-Sep-2025 20:40:58 Europe/Berlin] Datos recibidos: miembro_id=21, idmembresia=12, fecha_pago=2025-09-16, monto_pagado=100
+[16-Sep-2025 20:40:58 Europe/Berlin] Pago insertado. Filas afectadas: 1

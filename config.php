@@ -6,6 +6,12 @@ $dbname = 'gimnasio_db';
 $username = 'root';
 $password = '';
 
+//session_start();
+//$host = '192.185.194.19';
+//$dbname = 'i20com_bdtomi';
+//$username = 'i20com_tomi';
+//$password = 'Tomix321210909';
+
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

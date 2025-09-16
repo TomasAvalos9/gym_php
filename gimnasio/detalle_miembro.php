@@ -193,7 +193,7 @@
                                 <a href="miembros.php" class="btn btn-secondary">
                                     <i class="fas fa-arrow-left"></i> Volver
                                 </a>
-                                <a href="editar_miembro.php?id=<?php echo $miembro_id; ?>" class="btn btn-warning">
+                                <a href="agregarEditarMiembro.php?id=<?php echo $miembro_id; ?>" class="btn btn-warning">
                                     <i class="fas fa-edit"></i> Editar
                                 </a>
                             </div>
@@ -207,7 +207,14 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="mb-3 text-center">
-                                            <i class="fas fa-user-circle fa-5x text-primary"></i>
+                                            <?php if (!empty($miembro['foto'])): ?>
+                                                <img src="../<?php echo htmlspecialchars($miembro['foto']); ?>" 
+                                                    alt="Foto de <?php echo htmlspecialchars($miembro['miembro']); ?>" 
+                                                    class="rounded-circle shadow" width="120" height="120" 
+                                                    style="object-fit: cover;">
+                                            <?php else: ?>
+                                                <i class="fas fa-user-circle fa-5x text-primary"></i>
+                                            <?php endif; ?>
                                         </div>
                                         <h3 class="card-title text-center mb-4"><?php echo htmlspecialchars($miembro['miembro']); ?></h3>
                                         
